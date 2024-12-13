@@ -1,5 +1,7 @@
 import type { Address } from "@/models/address.model";
 import type { Cart, CartItem, PaymentType } from "@/models/cart.model";
+import type { Restaurant } from "@/models/restaurant";
+import Swal from "sweetalert2";
 
 export const CART_KEY = "cart";
 
@@ -12,7 +14,7 @@ interface CartState {
   save(cart: Cart | null): void;
   saveAddress(address: Address): void;
   savePaymentType(paymentType: PaymentType): void;
-  addItem(item: CartItem): void;
+  addItem(item: CartItem, restaurant: Restaurant): void;
   updateItem(index: number, item: CartItem): void;
   removeItem(index: number): void;
   clear(): void;
@@ -50,11 +52,30 @@ export const CartStore = reactive<CartState>({
     }
   },
 
-  addItem(item: CartItem): void {
+  addItem(item: CartItem, restaurant: Restaurant): void {
     const cart = this.cart;
     if (cart) {
-      cart.items.push(item);
-      this.save(cart)
+      if (cart.restaurant.id != restaurant.id) {
+        Swal.fire({
+          title: "Você já possui uma sacola de outro restaurante!",
+          text: "Deseja esvaziar sacola?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Sim, esvaziar sacola!",
+          cancelButtonText: "Cancelar"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            cart.restaurant = restaurant;
+            cart.items = [item];
+            this.save(cart);
+          }
+        });
+      } else {
+        cart.items.push(item);
+        this.save(cart)
+      }
     }
   },
 
