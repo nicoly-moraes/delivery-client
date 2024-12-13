@@ -1,0 +1,74 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Assaí - Goiânia Portugal",
+      "image": "https://static.ifood-static.com.br/image/upload/t_low/logosgde/ea363483-b297-4b43-8f88-3362869d87df/202407171404_9bIH_i.jpg?imwidth=128",
+      "deliveryPrice": 0,
+      "distance": 0.9,
+      "categories": [
+        {
+          "id": 1,
+          "name": "Linha Baratíssimos",
+          "products": [
+            {
+              "id": 1,
+              "name": "2 Ovos na Chapa",
+              "description": "Prato econômico que fala? 2 Ovos na chapa, arroz, purê de batata caseirinho e salada vinagrete.",
+              "price": 24.99,
+              "image": "https://static.ifood-static.com.br/image/upload/t_medium/pratos/cf87251a-2f35-4a55-ab93-07f84d59c7b9/202407261356_4TL0_i.jpg"
+            },
+            {
+              "id": 2,
+              "name": "Croc Caseirinho",
+              "description": "Nosso hambúrguer de frango caseiro, crocante e suculento, servido com arroz, feijão de caldo e salada vinagrete.",
+              "price": 24.99,
+              "image": "https://static.ifood-static.com.br/image/upload/t_medium/pratos/cf87251a-2f35-4a55-ab93-07f84d59c7b9/202407261410_00GA_i.jpg"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Bebidas",
+          "products": [
+            {
+              "id": 3,
+              "name": "Fanta Uva 350ml",
+              "description": "Lata 350ml",
+              "price": 3.5,
+              "image": "https://static.ifood-static.com.br/image/upload/t_medium/pratos/820af392-002c-47b1-bfae-d7ef31743c7f/202210180020_f43jm7splpp.jpg"
+            },
+            {
+              "id": 4,
+              "name": "Coca-Cola Zero Lata 350ml",
+              "description": "Lata",
+              "price": 4.5,
+              "image": "https://static.ifood-static.com.br/image/upload/t_medium/pratos/cf87251a-2f35-4a55-ab93-07f84d59c7b9/202407261410_00GA_i.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Super Barão - Marista",
+      "image": "https://static.ifood-static.com.br/image/upload/t_low/logosgde/c3142d58-db98-4ed7-aeac-bd01d48d8bc3/202404160959_CDGQ_i.jpg?imwidth=128",
+      "deliveryPrice": 9.49,
+      "distance": 1.3
+    },
+    {
+      "id": 3,
+      "name": "Vida Nativa",
+      "image": "https://static.ifood-static.com.br/image/upload/t_low/logosgde/857d0112-5f0f-41c3-afc7-958a05f7eef6/202309160824_bXsV_i.jpg?imwidth=128",
+      "deliveryPrice": 9.99,
+      "distance": 1.4
+    },
+    {
+      "id": 4,
+      "name": "Tropical Polpas e Açaí Amazon",
+      "image": "https://static.ifood-static.com.br/image/upload/t_low/logosgde/4ec77216-4766-419c-8c23-4576707ef018/202011201337_q3UV_i.jpg?imwidth=128",
+      "deliveryPrice": 9.99,
+      "distance": 2.7
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@use 'vuetify';
+
+@import 'sweetalert2/dist/sweetalert2.min.css';
+
+.swal2-styled.swal2-confirm {
+  background-color: rgb(var(--v-theme-primary));
+}
+
+.swal2-styled.swal2-confirm:focus {
+  box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), .5);
+}
