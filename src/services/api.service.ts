@@ -22,7 +22,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && [401, 403].includes(error.response.status)) {
+    if (error.response && [401, 403].includes(error.response.status) && !location.pathname.startsWith("/login")) {
       localStorage.setItem('redirectPath', location.pathname)
       router.push({ name: 'login' })
     }

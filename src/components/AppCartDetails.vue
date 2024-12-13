@@ -169,6 +169,8 @@ function buy() {
       CartStore.clear()
 
       emit('done')
+    }).catch(() => {
+      Swal.close();
     })
   }  
 }
