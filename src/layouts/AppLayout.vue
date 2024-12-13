@@ -1,7 +1,9 @@
 <template>
   <v-app id="inspire">
     <v-app-bar class="px-6">
-      <v-app-bar-title class="ma-0">Application</v-app-bar-title>
+      <v-app-bar-title class="ma-0">
+        <v-btn class="bg-white" size="x-large" @click="toHome">Delivery</v-btn>
+      </v-app-bar-title>
 
       <v-btn
         v-if="isCartEmpty"
@@ -31,6 +33,9 @@
 import { computed, ref, watch } from 'vue';
 import AppCartDetails from '@/components/AppCartDetails.vue';
 import { CartStore } from '@/store/cart.store';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const drawer = ref<boolean>(false)
 const isCartEmpty = computed(() => !!CartStore.cart?.items?.length)
@@ -58,6 +63,10 @@ const formattedPrice = computed(() => {
 watch(isCartEmpty, (value) => {
   drawer.value = value === false ? false : drawer.value
 })
+
+function toHome() {
+  router.push({ name: 'home' })
+}
 </script>
 
 <style scoped lang="scss">

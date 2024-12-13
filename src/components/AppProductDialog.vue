@@ -78,7 +78,7 @@ function addToCart() {
     notes: notes.value,
   }
   if (cart) {
-    CartStore.addItem(item, restaurant)
+    CartStore.addItem(item, restaurant.value)
   } else {
     CartStore.save({
       restaurant: restaurant.value!,

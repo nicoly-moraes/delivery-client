@@ -54,8 +54,19 @@ export const CartStore = reactive<CartState>({
 
   addItem(item: CartItem, restaurant: Restaurant): void {
     const cart = this.cart;
+
+    const restartCart = () => {
+      if (cart) {
+        cart.restaurant = restaurant;
+        cart.items = [item];
+        this.save(cart);
+      }
+    }
+
     if (cart) {
-      if (cart.restaurant.id != restaurant.id) {
+      if (cart.items.length === 0) {
+        restartCart();
+      } else if (cart.restaurant.id != restaurant.id) {
         Swal.fire({
           title: "Você já possui uma sacola de outro restaurante!",
           text: "Deseja esvaziar sacola?",
@@ -67,9 +78,7 @@ export const CartStore = reactive<CartState>({
           cancelButtonText: "Cancelar"
         }).then((result) => {
           if (result.isConfirmed) {
-            cart.restaurant = restaurant;
-            cart.items = [item];
-            this.save(cart);
+            restartCart();
           }
         });
       } else {
